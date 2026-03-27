@@ -2,9 +2,11 @@ version: 1
 frontend:
   phases:
     build:
-      commands: []
+      commands:
+        - mkdir -p deploy_dist
+        - cp -R * deploy_dist/ 2>/dev/null || true
   artifacts:
-    baseDirectory: /
+    baseDirectory: deploy_dist
     files:
       - '**/*'
   cache:
